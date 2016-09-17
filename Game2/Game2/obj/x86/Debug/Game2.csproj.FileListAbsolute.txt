@@ -23,3 +23,5 @@ c:\users\jacco mook\documents\visual studio 2015\Projects\Game2\Game2\bin\Window
 c:\users\jacco mook\documents\visual studio 2015\Projects\Game2\Game2\obj\x86\Debug\Game2.exe
 c:\users\jacco mook\documents\visual studio 2015\Projects\Game2\Game2\obj\x86\Debug\Game2.pdb
 c:\users\jacco mook\documents\visual studio 2015\Projects\Game2\Game2\obj\x86\Debug\Game2.csprojResolveAssemblyReference.cache
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\obj\x86\Debug\Game2.exe
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\obj\x86\Debug\Game2.pdb
