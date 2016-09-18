@@ -25,3 +25,26 @@ c:\users\jacco mook\documents\visual studio 2015\Projects\Game2\Game2\obj\x86\De
 c:\users\jacco mook\documents\visual studio 2015\Projects\Game2\Game2\obj\x86\Debug\Game2.csprojResolveAssemblyReference.cache
 C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\obj\x86\Debug\Game2.exe
 C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\obj\x86\Debug\Game2.pdb
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\Game2.exe
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\Game2.pdb
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\obj\x86\Debug\Game2.csprojResolveAssemblyReference.cache

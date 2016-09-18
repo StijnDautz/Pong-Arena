@@ -4,9 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace circlePong
 {
-    /// <summary>
-    /// This is the main type for your game.
-    /// </summary>
+   
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
@@ -16,20 +14,27 @@ namespace circlePong
         Texture2D character2;
         Texture2D ball;
 
+       
+
         int circleRadius = 400; //Diameter mainCircle
         int circleXPos;
         int circleYPos;
+        int turn; //Who's turn it currently is
 
         double tPosCharacter1 = 0; //Character1
         double tSpeedCharacter1 = 0.05;
         double xPosCharacter1;
         double yPosCharacter1;
+        int character1Length = 100;
+        int character1Points = 0;
         
 
         double tPosCharacter2 = 0; //Character2
         double tSpeedCharacter2 = 0.05;
         double xPosCharacter2;
         double yPosCharacter2;
+        int character2Length = 100;
+        int character2Points = 0;
 
         double xBall = 900, yBall = 600; // Ball
         double xSpeedBall = 2;
@@ -60,10 +65,10 @@ namespace circlePong
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            character1 = new Texture2D(graphics.GraphicsDevice, 50, 5);
+            character1 = new Texture2D(graphics.GraphicsDevice, character1Length, 5);
             setColor(character1, Color.Blue);
 
-            character2 = new Texture2D(graphics.GraphicsDevice, 50, 5);
+            character2 = new Texture2D(graphics.GraphicsDevice, character2Length, 5);
             setColor(character2, Color.Red);
 
             ball = new Texture2D(graphics.GraphicsDevice, 5, 5);
@@ -115,6 +120,8 @@ namespace circlePong
             //Ball
             if (System.Math.Sqrt((xBall - circleXPos) * (xBall - circleXPos) + (yBall - circleYPos) * (yBall - circleYPos)) > circleRadius) //if d(ball, center of circle) > radius ...
             {
+                if (System.Math.Tanh((xBall - circleXPos) / (yBall - circleYPos)) > System.Math.Tanh((xPosCharacter1 - circleXPos) / (yPosCharacter1 - circleYPos)) && System.Math.Tanh((xBall - circleXPos) / (yBall - circleYPos)) < System.Math.Tanh((xPosCharacter1 - circleXPos) / (yPosCharacter1 - circleYPos)) + (2*System.Math.PI * (character1Length/(System.Math.PI * 2 * circleRadius))))
+                {
                     double newAngle = (tPosCharacter1 + System.Math.PI * 0.5) + 2 * (tPosCharacter1 + System.Math.PI * 0.5 - directionBall) + System.Math.PI;
                     double currentSpeed = System.Math.Sqrt(xSpeedBall * xSpeedBall + ySpeedBall * ySpeedBall);
                     xBall -= 4 * (int)xSpeedBall; //resetten ball
@@ -122,6 +129,45 @@ namespace circlePong
 
                     xSpeedBall = System.Math.Cos(System.Math.PI * 0.5 + newAngle) * currentSpeed; //0.5 pi maakt hier niet uit, right?
                     ySpeedBall = System.Math.Sin(System.Math.PI * 0.5 + newAngle) * currentSpeed;
+                    turn = 2;
+                }
+                if (System.Math.Tanh((xBall - circleXPos) / (yBall - circleYPos)) > System.Math.Tanh((xPosCharacter2 - circleXPos) / (yPosCharacter2 - circleYPos)) && System.Math.Tanh((xBall - circleXPos) / (yBall - circleYPos)) < System.Math.Tanh((xPosCharacter2 - circleXPos) / (yPosCharacter2 - circleYPos)) + (2 * System.Math.PI * (character2Length / (System.Math.PI * 2 * circleRadius))))
+                {
+                    double newAngle = (tPosCharacter2 + System.Math.PI * 0.5) + 2 * (tPosCharacter2 + System.Math.PI * 0.5 - directionBall) + System.Math.PI;
+                    double currentSpeed = System.Math.Sqrt(xSpeedBall * xSpeedBall + ySpeedBall * ySpeedBall);
+                    xBall -= 4 * (int)xSpeedBall; //resetten ball
+                    yBall -= 4 * (int)ySpeedBall;
+
+                    xSpeedBall = System.Math.Cos(System.Math.PI * 0.5 + newAngle) * currentSpeed; //0.5 pi maakt hier niet uit, right?
+                    ySpeedBall = System.Math.Sin(System.Math.PI * 0.5 + newAngle) * currentSpeed;
+                    turn = 1;
+                }
+                if (System.Math.Sqrt((xBall - circleXPos) * (xBall - circleXPos) + (yBall - circleYPos) * (yBall - circleYPos)) > circleRadius + 20)
+                {
+                    switch (turn)
+                    {
+                        case 1: {
+                                character2Points++;
+                                xBall = circleXPos;
+                                yBall = circleYPos;
+                                System.Diagnostics.Debug.WriteLine("Player2 has " + character2Points + " points!");
+                                break;
+                                }
+                        case 2:
+                                {
+                                character1Points++;
+                                xBall = circleXPos;
+                                yBall = circleYPos;
+                                System.Diagnostics.Debug.WriteLine("Player1 has " + character1Points + " points!");
+                                break;
+                                }
+                        default:{
+                                break;
+                                }
+
+                            }
+                    }
+                
             }
             
             xBall += (int)xSpeedBall;
