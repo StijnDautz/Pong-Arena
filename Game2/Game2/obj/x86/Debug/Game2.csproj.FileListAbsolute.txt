@@ -48,3 +48,28 @@ C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\Sharp
 C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.RawInput.xml
 C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\Jacco Mook\Documents\Pong-Arena\Game2\Game2\obj\x86\Debug\Game2.csprojResolveAssemblyReference.cache
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\Game2.exe
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\Game2.pdb
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\MonoGame.Framework.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XInput.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\MonoGame.Framework.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XInput.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\obj\x86\Debug\Game2.csprojResolveAssemblyReference.cache
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\obj\x86\Debug\Game2.exe
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Game2\Game2\obj\x86\Debug\Game2.pdb

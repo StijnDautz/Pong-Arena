@@ -164,7 +164,6 @@ namespace circlePong
                         default:{
                                 break;
                                 }
-
                             }
                     }
                 

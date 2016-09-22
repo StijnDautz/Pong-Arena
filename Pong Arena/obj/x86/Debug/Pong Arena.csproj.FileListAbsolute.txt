@@ -1,0 +1,25 @@
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\Pong Arena.exe
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\Pong Arena.pdb
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\MonoGame.Framework.dll
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.dll
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.XInput.dll
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\MonoGame.Framework.xml
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.xml
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.XInput.xml
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\obj\x86\Debug\Pong Arena.csprojResolveAssemblyReference.cache
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\obj\x86\Debug\Pong Arena.exe
+d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\obj\x86\Debug\Pong Arena.pdb
