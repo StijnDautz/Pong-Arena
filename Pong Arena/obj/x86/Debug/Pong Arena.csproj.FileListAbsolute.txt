@@ -48,3 +48,6 @@ C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\
 C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.RawInput.xml
 C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\obj\x86\Debug\Pong Arena.csprojResolveAssemblyReference.cache
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\Content\ball.png
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\DynamicObject.cs
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\Content\Paddle1.png

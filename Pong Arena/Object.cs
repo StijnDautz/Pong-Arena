@@ -17,8 +17,11 @@ namespace Pong_Arena
     {
         protected Texture2D texture;
         protected Vector2 location;
+        protected Vector2 direction;
+        protected Vector2 origin;
         protected Rectangle sourceRectangle;
-        protected float rotation;
+        protected double rotation;
+        protected float speed;
         protected int height;
         protected int width;
         protected int totalFrames;
@@ -30,26 +33,33 @@ namespace Pong_Arena
         private Vector2[] corners = new Vector2[4];
         private struct border
         {
-            public Vector2 vec1, vec2, axis;
+            public Vector2 vec1, vec2, axis, normal;
             public border(Vector2 v1, Vector2 v2)
             {
-                vec1 = v1; vec2 = v2; axis = v2 - v1;
+                vec1 = v1;
+                vec2 = v2;
+                axis = v2 - v1;
+                normal = new Vector2(axis.Y, -axis.X);
             }
         };
         /*
          * Object Constructer -- textureheight and -width
          */
-        public Object(string n, Vector2 loc, int h, int w)
+        public Object(string n, Vector2 loc, Vector2 destination, int h, int w, float s)
         {
             if (name == null)
             {
                 Console.Write("Object.name is not initialized");
             }
-            this.name = n;
-            this.location = loc;
-            this.height = h;
-            this.width = w;
+            name = n;
+            location = loc;
+            height = h;
+            width = w;
+            speed = s;
+            direction = destination - loc;
+            direction.Normalize();
             sourceRectangle = new Rectangle(1, 0, w, h);
+            origin = new Vector2(width / 2, height / 2);
             corners = new Vector2[] {
             new Vector2(loc.X, loc.Y),
             new Vector2(loc.X + width, loc.Y),
@@ -61,20 +71,24 @@ namespace Pong_Arena
         /*
          * Object Constructer -- Use for static framebased Objects
          */
-        public Object(string n, Vector2 loc, int h, int w, int totalframes, int displayedframe)
+        public Object(string n, Vector2 loc, Vector2 destination, int h, int w, float s, int totalframes, int displayedframe)
         {
             if (name == null)
             {
                 Console.Write("Object.name is not initialized");
             }
-            this.name = n;
-            this.location = loc;
-            this.height = h;
-            this.width = w;
+            name = n;
+            location = loc;
+            height = h;
+            width = w;
+            speed = s;
+            direction = destination - loc;
+            direction.Normalize();
             totalFrames = totalframes;
             displayedFrame = displayedframe;
             frameWidth = width / totalframes;
             sourceRectangle = new Rectangle(displayedframe * frameWidth, 0, w, h);
+            origin = new Vector2(width / 2, height / 2);
             corners = new Vector2[] {
             new Vector2(loc.X, loc.Y),
             new Vector2(loc.X + width, loc.Y),
@@ -122,16 +136,16 @@ namespace Pong_Arena
         /*
          * Rotate at certain angle in radials
          */
-        public void Rotate(float angle)
+        public void Rotate(double angle)
         {
             for (int i = 0; i < corners.Length; i++)
             {
-                Vector2 p = corners[i] - location;
+                Vector2 p = corners[i] - origin;
                 float x = p.X;
                 float y = p.Y;
                 p.X = (float)(x * Math.Cos(angle) - y * Math.Sin(angle));
                 p.Y = (float)(x * Math.Sin(angle) + y * Math.Cos(angle));
-                corners[i] = location + p;
+                corners[i] = origin + p;
             }
             rotation = angle;
         }
@@ -139,11 +153,45 @@ namespace Pong_Arena
         /*
          * Move a certain distance
          */
-        public void Move(Vector2 destination)
+        protected void Move()
         {
-            location += destination;
-            for (int i = 0; i < corners.Length; i++) { corners[i] += destination; }
+            location += direction * speed;
+            for (int i = 0; i < corners.Length; i++) { corners[i] += direction * speed; }
         }
+
+        public void Bounce(Object collider)
+        {
+            //init collidingborder to prevent unassigned field -- it is changed later anyway
+            border collidingBorder = new border(collider.corners[0], collider.corners[1]);
+
+            List<double> distanceToBorder = new List<double>();
+            border[] borders = { new border(collider.corners[0], collider.corners[1]), new border(collider.corners[1], collider.corners[2]), new border(collider.corners[2], collider.corners[3]), new border(collider.corners[3], collider.corners[0])};
+
+            //calculate distances to borders
+            for (int i = 0; i < borders.Length; i++)
+            {
+                float a = (borders[i].vec1.Y - borders[i].vec2.Y) / (borders[i].vec1.X - borders[i].vec2.X);
+                float b = a * borders[i].vec1.X - borders[i].vec1.Y;
+                float x = -b / a;
+                distanceToBorder.Add(Math.Abs(-a * origin.X + origin.Y - b) / Math.Sqrt(a * a + b * b));
+            }
+
+            //get shortest distance to border
+            double shortest = distanceToBorder.Min();
+
+            //get border that corresponds to this value, this is the border that this is colliding with
+            for(int s = 0; s < distanceToBorder.Count; s++)
+                {
+                    if(shortest == distanceToBorder[s]) { collidingBorder = borders[s]; break; }
+                }
+            Vector2 newdirection = ((2 * Vector2.Dot(collidingBorder.normal, direction)) * collidingBorder.normal - direction) - collidingBorder.normal;       
+        }
+
+        public void Update(GameTime gametime)
+        {
+            Move();
+        }
+
 
         /*
          * Get
@@ -152,8 +200,8 @@ namespace Pong_Arena
         public Texture2D getTexture() { return texture; }
         public Vector2 getLocation() { return location; }
         public Rectangle getSourceRectangle() { return sourceRectangle; }
-        public float getRotation() { return rotation; }
-
+        public double getRotation() { return rotation; }
+        public Vector2 getOrigin() { return origin; }
         /*
          * Set
          */

@@ -18,7 +18,8 @@ namespace Pong_Arena
         //Initialize
         private Object[] arrayObjectAll =
         {
-
+            new Object("ball", new Vector2(100, 100), new Vector2(400, 350),50, 50, 3f),
+            new Object("paddle1", new Vector2(200, 200), new Vector2(200, 200), 40, 120, 0),
         };
         private DynamicObject[] arrayDynamicObjectAll =
         {
@@ -39,6 +40,8 @@ namespace Pong_Arena
             Content.RootDirectory = "Content";
             graphics = new GraphicsDeviceManager(this);
             gameState = gameStates.INGAME;
+            listObjects.Add(arrayObjectAll[1]);
+            listObjects.Add(arrayObjectAll[0]);
         }
 
         protected override void Update(GameTime gameTime)
@@ -86,7 +89,7 @@ namespace Pong_Arena
             for (int i = 0; i < listObjects.Count; i++)
             {
                 Object x = listObjects[i];
-                spriteBatch.Draw(x.getTexture(), x.getLocation(), x.getSourceRectangle(), Color.White, x.getRotation(), Vector2.Zero, 1, SpriteEffects.None, 1);
+                spriteBatch.Draw(x.getTexture(), x.getLocation(), x.getSourceRectangle(), Color.White, (float)x.getRotation(), x.getOrigin() , 1, SpriteEffects.None, 1);
             }
             spriteBatch.End();
         }
@@ -106,6 +109,16 @@ namespace Pong_Arena
             {
                 listDynamicObject[i].Update(gameTime);
             }
+            for(int i = 0; i < listObjects.Count; i++)
+            {
+                listObjects[i].Update(gameTime);
+            }
+            if(arrayObjectAll[0].CollidesWith(arrayObjectAll[1]))
+            {
+                arrayObjectAll[0].Bounce(arrayObjectAll[1]);
+            }
+
+            
 
             //perform actions based on input
             InputHandler();
@@ -118,22 +131,6 @@ namespace Pong_Arena
         private void InputHandler()
         {
             KeyboardState state = Keyboard.GetState();
-            if (state.IsKeyDown(Keys.D))
-            {
-                arrayObjectAll[1].Move(new Vector2(5, 0));
-            }
-            if (state.IsKeyDown(Keys.A))
-            {
-                arrayObjectAll[1].Move(new Vector2(-5, 0));
-            }
-            if (state.IsKeyDown(Keys.W))
-            {
-                arrayObjectAll[1].Move(new Vector2(0, -5));
-            }
-            if (state.IsKeyDown(Keys.S))
-            {
-                arrayObjectAll[1].Move(new Vector2(0, 5));
-            }
         }
     }
 }
