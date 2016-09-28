@@ -53,8 +53,8 @@ namespace Pong_Arena
             corners = new Vector2[] {
             new Vector2(loc.X, loc.Y),
             new Vector2(loc.X + width, loc.Y),
-            new Vector2(loc.X, loc.Y + height),
             new Vector2(loc.X + width, loc.Y + height),
+            new Vector2(loc.X, loc.Y + height),
             };
         }
 
@@ -78,8 +78,8 @@ namespace Pong_Arena
             corners = new Vector2[] {
             new Vector2(loc.X, loc.Y),
             new Vector2(loc.X + width, loc.Y),
-            new Vector2(loc.X, loc.Y + height),
             new Vector2(loc.X + width, loc.Y + height),
+            new Vector2(loc.X, loc.Y + height),
             };
         }
 

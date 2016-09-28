@@ -23,3 +23,28 @@ d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\bin\W
 d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\obj\x86\Debug\Pong Arena.csprojResolveAssemblyReference.cache
 d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\obj\x86\Debug\Pong Arena.exe
 d:\users\stijn\documents\visual studio 2015\Projects\Pong Arena\Pong Arena\obj\x86\Debug\Pong Arena.pdb
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\obj\x86\Debug\Pong Arena.exe
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\obj\x86\Debug\Pong Arena.pdb
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\Pong Arena.exe
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\Pong Arena.pdb
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\obj\x86\Debug\Pong Arena.csprojResolveAssemblyReference.cache
