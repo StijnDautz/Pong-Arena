@@ -20,6 +20,10 @@ namespace Pong_Arena
         protected Vector2 direction;
         protected Vector2 origin;
         protected Rectangle sourceRectangle;
+<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
+=======
+        private List<Object> listBounceObjects = new List<Object>();
+>>>>>>> Fix rotation, add bounce func and add comments everywhere
         protected double rotation;
         protected float speed;
         protected int height;
@@ -40,8 +44,13 @@ namespace Pong_Arena
                 vec2 = v2;
                 axis = v2 - v1;
                 normal = new Vector2(axis.Y, -axis.X);
+<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
+=======
+                normal.Normalize();
+>>>>>>> Fix rotation, add bounce func and add comments everywhere
             }
         };
+
         /*
          * Object Constructer -- textureheight and -width
          */
@@ -57,7 +66,14 @@ namespace Pong_Arena
             width = w;
             speed = s;
             direction = destination - loc;
+<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
             direction.Normalize();
+=======
+            if(direction != Vector2.Zero)
+            {
+                direction.Normalize();
+            }
+>>>>>>> Fix rotation, add bounce func and add comments everywhere
             sourceRectangle = new Rectangle(1, 0, w, h);
             origin = new Vector2(width / 2, height / 2);
             corners = new Vector2[] {
@@ -83,7 +99,14 @@ namespace Pong_Arena
             width = w;
             speed = s;
             direction = destination - loc;
+<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
             direction.Normalize();
+=======
+            if (direction != Vector2.Zero)
+            {
+                direction.Normalize();
+            }
+>>>>>>> Fix rotation, add bounce func and add comments everywhere
             totalFrames = totalframes;
             displayedFrame = displayedframe;
             frameWidth = width / totalframes;
@@ -97,17 +120,27 @@ namespace Pong_Arena
             };
         }
 
+        public void Update(GameTime gametime)
+        {
+            Move();
+        }
+
         /*
          * Checks if this Object collides with the tested Object
          * As collision is less commmon it is not based on detecting collision, but on detecting if there's no collision to get maximum performance
          */
         public bool CollidesWith(Object collider)
         {
+            //setting up borders to check, 8 in total, 4 for each object
             border[] borders = { new border(corners[0], corners[1]), new border(corners[1], corners[2]), new border(corners[2], corners[3]), new border(corners[3], corners[0]),
                                  new border(collider.corners[0], collider.corners[1]), new border(collider.corners[1], collider.corners[2]), new border(collider.corners[2], collider.corners[3]), new border(collider.corners[3], collider.corners[0]) };
+            //Declaring lists as the List class contains the useful functions max() and min(), which are used later in the function
             List<float> thisScalarProjections = new List<float>();
             List<float> colliderScalarProjections = new List<float>();
+            
+            //collision is always true, except when there's a gap found, then collision is false and we break from the loop to improve performance
             bool collision = true;
+
             //loop through borders and store the min and max scalarprojection of this and collider allong border
             for (int b = 0; b < borders.Length; b++)
             {
@@ -126,7 +159,7 @@ namespace Pong_Arena
                 {
                     collision = false; break;
                 }
-                //clear lists
+                //clear lists to prevent from giving false min() and max() values
                 thisScalarProjections.Clear();
                 colliderScalarProjections.Clear();
             }
@@ -140,13 +173,27 @@ namespace Pong_Arena
         {
             for (int i = 0; i < corners.Length; i++)
             {
+<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
                 Vector2 p = corners[i] - origin;
+=======
+                //transform origin of Object to Vector2.Zero, so corners rotate around Vector2.Zero
+                Vector2 p = corners[i] - (location + origin);
+
+                //rotate object
+>>>>>>> Fix rotation, add bounce func and add comments everywhere
                 float x = p.X;
                 float y = p.Y;
                 p.X = (float)(x * Math.Cos(angle) - y * Math.Sin(angle));
                 p.Y = (float)(x * Math.Sin(angle) + y * Math.Cos(angle));
+<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
                 corners[i] = origin + p;
+=======
+
+                //transform origin back to old location
+                corners[i] = location + origin + p;
+>>>>>>> Fix rotation, add bounce func and add comments everywhere
             }
+            //set rotation to angle, so the Objects plane corresponds to the texture that's drawn
             rotation = angle;
         }
 
@@ -160,6 +207,7 @@ namespace Pong_Arena
         }
 
         public void Bounce(Object collider)
+<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
         {
             //init collidingborder to prevent unassigned field -- it is changed later anyway
             border collidingBorder = new border(collider.corners[0], collider.corners[1]);
@@ -190,6 +238,33 @@ namespace Pong_Arena
         public void Update(GameTime gametime)
         {
             Move();
+=======
+        {
+            //init borders to check
+            border[] borders = { new border(collider.corners[0], collider.corners[1]), new border(collider.corners[1], collider.corners[2]), new border(collider.corners[2], collider.corners[3]), new border(collider.corners[3], collider.corners[0])};
+
+            //set originlocation, as origin itself does not represent the origin at the current location of the object, but is used for rotating the object instead
+            Vector2 originloc = location + origin;
+            Vector2 collideroriginloc = collider.location + collider.origin;
+
+            //calculate distances to borders
+            for (int i = 0; i < borders.Length; i++)
+            {
+                //if the origin is on the other side of the border to bounce on then check1 or -2 is negative and the other positive
+                //if this is the case the bounce on this side(border) of the plane
+                float check1 = (borders[i].vec2.X - borders[i].vec1.X) * (originloc.Y - borders[i].vec2.Y) - (borders[i].vec2.Y - borders[i].vec1.Y) * (originloc.X - borders[i].vec2.X);
+                float check2 = (borders[i].vec2.X - borders[i].vec1.X) * (collideroriginloc.Y - borders[i].vec2.Y) - (borders[i].vec2.Y - borders[i].vec1.Y) * (collideroriginloc.X - borders[i].vec2.X);
+              
+                if ((check1 > 0 && check2 < 0) || (check1 < 0 && check2 > 0))
+                {
+                    //calculate new direction after bounce and set it equal to the direction the object should move in
+                    direction = (-2 * borders[i].normal * Vector2.Dot(borders[i].normal, direction)) + direction;
+                    //make sure length of direction is still 1
+                    direction.Normalize();
+                    break;
+                }
+            }    
+>>>>>>> Fix rotation, add bounce func and add comments everywhere
         }
 
 
@@ -202,9 +277,13 @@ namespace Pong_Arena
         public Rectangle getSourceRectangle() { return sourceRectangle; }
         public double getRotation() { return rotation; }
         public Vector2 getOrigin() { return origin; }
+<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
+=======
+
+>>>>>>> Fix rotation, add bounce func and add comments everywhere
         /*
          * Set
          */
         public void setTexture(Texture2D tex) { texture = tex; }
     }
-}
+} 

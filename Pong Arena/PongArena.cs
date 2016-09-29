@@ -14,12 +14,19 @@ namespace Pong_Arena
         private SpriteBatch spriteBatch;
         private List<DynamicObject> listDynamicObject = new List<DynamicObject>();
         private List<Object> listObjects = new List<Object>();
+        int elapsedBounceTime = 0;
+        double rotation = 0;
 
         //Initialize
         private Object[] arrayObjectAll =
         {
             new Object("ball", new Vector2(100, 100), new Vector2(400, 350),50, 50, 3f),
+<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
             new Object("paddle1", new Vector2(200, 200), new Vector2(200, 200), 40, 120, 0),
+=======
+            new Object("paddle1", new Vector2(200, 180), new Vector2(200, 180), 40, 120, 0),
+            new Object("ball", new Vector2(0, 100), new Vector2(400, 350),50, 50, 3f),
+>>>>>>> Fix rotation, add bounce func and add comments everywhere
         };
         private DynamicObject[] arrayDynamicObjectAll =
         {
@@ -40,8 +47,15 @@ namespace Pong_Arena
             Content.RootDirectory = "Content";
             graphics = new GraphicsDeviceManager(this);
             gameState = gameStates.INGAME;
+<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
             listObjects.Add(arrayObjectAll[1]);
             listObjects.Add(arrayObjectAll[0]);
+=======
+            //adding Objects and Dynamic Objects to load
+            listObjects.Add(arrayObjectAll[0]);
+            listObjects.Add(arrayObjectAll[1]);
+            listObjects.Add(arrayObjectAll[2]);
+>>>>>>> Fix rotation, add bounce func and add comments everywhere
         }
 
         protected override void Update(GameTime gameTime)
@@ -80,12 +94,12 @@ namespace Pong_Arena
             GraphicsDevice.Clear(Color.White);
 
             spriteBatch.Begin();
-            ///Loop through Objects to draw sprites
+            ///Loop through DynamicObjects to draw sprites
             for (int i = 0; i < listDynamicObject.Count; i++)
             {
                 spriteBatch.Draw(listDynamicObject[i].getTexture(), listDynamicObject[i].getLocation(), listDynamicObject[i].GetSourceRectangle(), Color.White);
             }
-
+            ///loop through Objects to draw sprites
             for (int i = 0; i < listObjects.Count; i++)
             {
                 Object x = listObjects[i];
@@ -104,6 +118,10 @@ namespace Pong_Arena
 
         private void GameStateInGame(GameTime gameTime)
         {
+            //setup bouncetime testing
+            int bounceInterval = 200;
+            elapsedBounceTime += gameTime.ElapsedGameTime.Milliseconds;
+
             ///Loop through animList and check if enough time has passed to update to the next frame
             for (int i = 0; i < listDynamicObject.Count; i++)
             {
@@ -113,6 +131,7 @@ namespace Pong_Arena
             {
                 listObjects[i].Update(gameTime);
             }
+<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
             if(arrayObjectAll[0].CollidesWith(arrayObjectAll[1]))
             {
                 arrayObjectAll[0].Bounce(arrayObjectAll[1]);
@@ -120,6 +139,16 @@ namespace Pong_Arena
 
             
 
+=======
+            ///check if Object is colliding with Object && enough time has passed to bounce again
+            //A bounce interval is neccessary to prevent object from keeping bouncing as Object still collide just little after the bounce
+            if(arrayObjectAll[0].CollidesWith(arrayObjectAll[1]) && elapsedBounceTime > bounceInterval)
+            {
+                arrayObjectAll[0].Bounce(arrayObjectAll[1]);
+                elapsedBounceTime = 0;
+            }
+            
+>>>>>>> Fix rotation, add bounce func and add comments everywhere
             //perform actions based on input
             InputHandler();
         }

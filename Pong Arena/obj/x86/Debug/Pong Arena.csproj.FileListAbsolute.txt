@@ -51,3 +51,34 @@ C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\
 C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\Content\ball.png
 C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\DynamicObject.cs
 C:\Users\dautz\Documents\School\Projects\GameProgrammeren\Pong-Arena\Pong Arena\bin\Windows\x86\Debug\Content\Paddle1.png
+<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
+=======
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\Content\ball.png
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\Content\Paddle1.png
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\DynamicObject.cs
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\Pong Arena.exe
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\Pong Arena.pdb
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\MonoGame.Framework.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.XInput.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\MonoGame.Framework.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.XInput.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\obj\x86\Debug\Pong Arena.csprojResolveAssemblyReference.cache
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\obj\x86\Debug\Pong Arena.exe
+D:\Users\Stijn\Documents\School\Projects\GameProgrammeren\Pong Arena Repo\Pong Arena\obj\x86\Debug\Pong Arena.pdb
+>>>>>>> Fix rotation, add bounce func and add comments everywhere
