@@ -15,49 +15,21 @@ namespace Pong_Arena
      */
     public class DynamicObject : Object
     {
-        Vector2 direction;
         double previousTime;
-        float speed;
         int currentFrame;
         int frameTime;
         bool loop;
-
-        /*
-       * DynamicObject constructor
-       * Use for DynamicObjects that move
-       * totalframes 0 - x -- frametime in milliseconds -- speed in distance/milleseconds
-       */
-        public DynamicObject(string name, Vector2 location, Vector2 destination, int height, int width, float movespeed)
-        : base(name, location, height, width)
-        {
-            speed = movespeed;
-            direction = destination - location;
-        }
-
-        /*
-        * DynamicObject constructor
-        * Use for animated DynamicObjects that do not move
-        * totalframes 0 - x -- frametime in milliseconds -- speed in distance/milleseconds
-        */
-        public DynamicObject(string name, Vector2 location, int height, int width, int totalframes, int displayedframe, int frametime, bool shouldloop)
-        : base(name, location, height, width, totalframes, displayedframe)
-        {
-            frameTime = frametime;
-            loop = shouldloop;
-        }
 
         /*
          * DynamicObject constructor
          * Use for animated DynamicObjects that move
          * totalframes 0 - x -- frametime in milliseconds -- speed in distance/milleseconds
          */
-        public DynamicObject(string name, Vector2 location, Vector2 destination, int height, int width, int totalframes, int displayedframe, int frametime, float movespeed, bool shouldloop)
-        : base(name, location, height, width, totalframes, displayedframe)
+        public DynamicObject(string name, Vector2 location, Vector2 destination, int height, int width, float speed, int totalframes, int displayedframe, int frametime, float movespeed, bool shouldloop)
+        : base(name, location, destination, height, width, speed, totalframes, displayedframe)
         {
             frameTime = frametime;
             loop = shouldloop;
-            speed = movespeed;
-            direction = destination - location;
         }
 
         /*

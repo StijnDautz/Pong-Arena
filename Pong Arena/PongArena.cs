@@ -14,11 +14,15 @@ namespace Pong_Arena
         private SpriteBatch spriteBatch;
         private List<DynamicObject> listDynamicObject = new List<DynamicObject>();
         private List<Object> listObjects = new List<Object>();
+        int elapsedBounceTime = 0;
+        double rotation = 0;
 
         //Initialize
         private Object[] arrayObjectAll =
         {
-
+            new Object("ball", new Vector2(100, 100), new Vector2(400, 350),50, 50, 3f),
+            new Object("paddle1", new Vector2(200, 180), new Vector2(200, 180), 40, 120, 0),
+            new Object("ball", new Vector2(0, 100), new Vector2(400, 350),50, 50, 3f),
         };
         private DynamicObject[] arrayDynamicObjectAll =
         {
@@ -39,6 +43,10 @@ namespace Pong_Arena
             Content.RootDirectory = "Content";
             graphics = new GraphicsDeviceManager(this);
             gameState = gameStates.INGAME;
+            //adding Objects and Dynamic Objects to load
+            listObjects.Add(arrayObjectAll[0]);
+            listObjects.Add(arrayObjectAll[1]);
+            listObjects.Add(arrayObjectAll[2]);
         }
 
         protected override void Update(GameTime gameTime)
@@ -77,16 +85,16 @@ namespace Pong_Arena
             GraphicsDevice.Clear(Color.White);
 
             spriteBatch.Begin();
-            ///Loop through Objects to draw sprites
+            ///Loop through DynamicObjects to draw sprites
             for (int i = 0; i < listDynamicObject.Count; i++)
             {
                 spriteBatch.Draw(listDynamicObject[i].getTexture(), listDynamicObject[i].getLocation(), listDynamicObject[i].GetSourceRectangle(), Color.White);
             }
-
+            ///loop through Objects to draw sprites
             for (int i = 0; i < listObjects.Count; i++)
             {
                 Object x = listObjects[i];
-                spriteBatch.Draw(x.getTexture(), x.getLocation(), x.getSourceRectangle(), Color.White, x.getRotation(), Vector2.Zero, 1, SpriteEffects.None, 1);
+                spriteBatch.Draw(x.getTexture(), x.getLocation(), x.getSourceRectangle(), Color.White, (float)x.getRotation(), x.getOrigin() , 1, SpriteEffects.None, 1);
             }
             spriteBatch.End();
         }
@@ -101,12 +109,27 @@ namespace Pong_Arena
 
         private void GameStateInGame(GameTime gameTime)
         {
+            //setup bouncetime testing
+            int bounceInterval = 200;
+            elapsedBounceTime += gameTime.ElapsedGameTime.Milliseconds;
+
             ///Loop through animList and check if enough time has passed to update to the next frame
             for (int i = 0; i < listDynamicObject.Count; i++)
             {
                 listDynamicObject[i].Update(gameTime);
             }
-
+            for(int i = 0; i < listObjects.Count; i++)
+            {
+                listObjects[i].Update(gameTime);
+            }
+            ///check if Object is colliding with Object && enough time has passed to bounce again
+            //A bounce interval is neccessary to prevent object from keeping bouncing as Object still collide just little after the bounce
+            if(arrayObjectAll[0].CollidesWith(arrayObjectAll[1]) && elapsedBounceTime > bounceInterval)
+            {
+                arrayObjectAll[0].Bounce(arrayObjectAll[1]);
+                elapsedBounceTime = 0;
+            }
+            
             //perform actions based on input
             InputHandler();
         }
@@ -118,22 +141,6 @@ namespace Pong_Arena
         private void InputHandler()
         {
             KeyboardState state = Keyboard.GetState();
-            if (state.IsKeyDown(Keys.D))
-            {
-                arrayObjectAll[1].Move(new Vector2(5, 0));
-            }
-            if (state.IsKeyDown(Keys.A))
-            {
-                arrayObjectAll[1].Move(new Vector2(-5, 0));
-            }
-            if (state.IsKeyDown(Keys.W))
-            {
-                arrayObjectAll[1].Move(new Vector2(0, -5));
-            }
-            if (state.IsKeyDown(Keys.S))
-            {
-                arrayObjectAll[1].Move(new Vector2(0, 5));
-            }
         }
     }
 }
