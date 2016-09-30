@@ -20,10 +20,7 @@ namespace Pong_Arena
         protected Vector2 direction;
         protected Vector2 origin;
         protected Rectangle sourceRectangle;
-<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
-=======
         private List<Object> listBounceObjects = new List<Object>();
->>>>>>> Fix rotation, add bounce func and add comments everywhere
         protected double rotation;
         protected float speed;
         protected int height;
@@ -44,10 +41,7 @@ namespace Pong_Arena
                 vec2 = v2;
                 axis = v2 - v1;
                 normal = new Vector2(axis.Y, -axis.X);
-<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
-=======
                 normal.Normalize();
->>>>>>> Fix rotation, add bounce func and add comments everywhere
             }
         };
 
@@ -66,14 +60,10 @@ namespace Pong_Arena
             width = w;
             speed = s;
             direction = destination - loc;
-<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
-            direction.Normalize();
-=======
             if(direction != Vector2.Zero)
             {
                 direction.Normalize();
             }
->>>>>>> Fix rotation, add bounce func and add comments everywhere
             sourceRectangle = new Rectangle(1, 0, w, h);
             origin = new Vector2(width / 2, height / 2);
             corners = new Vector2[] {
@@ -99,14 +89,10 @@ namespace Pong_Arena
             width = w;
             speed = s;
             direction = destination - loc;
-<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
-            direction.Normalize();
-=======
             if (direction != Vector2.Zero)
             {
                 direction.Normalize();
             }
->>>>>>> Fix rotation, add bounce func and add comments everywhere
             totalFrames = totalframes;
             displayedFrame = displayedframe;
             frameWidth = width / totalframes;
@@ -173,25 +159,17 @@ namespace Pong_Arena
         {
             for (int i = 0; i < corners.Length; i++)
             {
-<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
-                Vector2 p = corners[i] - origin;
-=======
                 //transform origin of Object to Vector2.Zero, so corners rotate around Vector2.Zero
                 Vector2 p = corners[i] - (location + origin);
 
                 //rotate object
->>>>>>> Fix rotation, add bounce func and add comments everywhere
                 float x = p.X;
                 float y = p.Y;
                 p.X = (float)(x * Math.Cos(angle) - y * Math.Sin(angle));
                 p.Y = (float)(x * Math.Sin(angle) + y * Math.Cos(angle));
-<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
-                corners[i] = origin + p;
-=======
 
                 //transform origin back to old location
                 corners[i] = location + origin + p;
->>>>>>> Fix rotation, add bounce func and add comments everywhere
             }
             //set rotation to angle, so the Objects plane corresponds to the texture that's drawn
             rotation = angle;
@@ -207,38 +185,6 @@ namespace Pong_Arena
         }
 
         public void Bounce(Object collider)
-<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
-        {
-            //init collidingborder to prevent unassigned field -- it is changed later anyway
-            border collidingBorder = new border(collider.corners[0], collider.corners[1]);
-
-            List<double> distanceToBorder = new List<double>();
-            border[] borders = { new border(collider.corners[0], collider.corners[1]), new border(collider.corners[1], collider.corners[2]), new border(collider.corners[2], collider.corners[3]), new border(collider.corners[3], collider.corners[0])};
-
-            //calculate distances to borders
-            for (int i = 0; i < borders.Length; i++)
-            {
-                float a = (borders[i].vec1.Y - borders[i].vec2.Y) / (borders[i].vec1.X - borders[i].vec2.X);
-                float b = a * borders[i].vec1.X - borders[i].vec1.Y;
-                float x = -b / a;
-                distanceToBorder.Add(Math.Abs(-a * origin.X + origin.Y - b) / Math.Sqrt(a * a + b * b));
-            }
-
-            //get shortest distance to border
-            double shortest = distanceToBorder.Min();
-
-            //get border that corresponds to this value, this is the border that this is colliding with
-            for(int s = 0; s < distanceToBorder.Count; s++)
-                {
-                    if(shortest == distanceToBorder[s]) { collidingBorder = borders[s]; break; }
-                }
-            Vector2 newdirection = ((2 * Vector2.Dot(collidingBorder.normal, direction)) * collidingBorder.normal - direction) - collidingBorder.normal;       
-        }
-
-        public void Update(GameTime gametime)
-        {
-            Move();
-=======
         {
             //init borders to check
             border[] borders = { new border(collider.corners[0], collider.corners[1]), new border(collider.corners[1], collider.corners[2]), new border(collider.corners[2], collider.corners[3]), new border(collider.corners[3], collider.corners[0])};
@@ -264,9 +210,7 @@ namespace Pong_Arena
                     break;
                 }
             }    
->>>>>>> Fix rotation, add bounce func and add comments everywhere
         }
-
 
         /*
          * Get
@@ -277,10 +221,7 @@ namespace Pong_Arena
         public Rectangle getSourceRectangle() { return sourceRectangle; }
         public double getRotation() { return rotation; }
         public Vector2 getOrigin() { return origin; }
-<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
-=======
 
->>>>>>> Fix rotation, add bounce func and add comments everywhere
         /*
          * Set
          */

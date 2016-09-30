@@ -21,12 +21,8 @@ namespace Pong_Arena
         private Object[] arrayObjectAll =
         {
             new Object("ball", new Vector2(100, 100), new Vector2(400, 350),50, 50, 3f),
-<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
-            new Object("paddle1", new Vector2(200, 200), new Vector2(200, 200), 40, 120, 0),
-=======
             new Object("paddle1", new Vector2(200, 180), new Vector2(200, 180), 40, 120, 0),
             new Object("ball", new Vector2(0, 100), new Vector2(400, 350),50, 50, 3f),
->>>>>>> Fix rotation, add bounce func and add comments everywhere
         };
         private DynamicObject[] arrayDynamicObjectAll =
         {
@@ -47,15 +43,10 @@ namespace Pong_Arena
             Content.RootDirectory = "Content";
             graphics = new GraphicsDeviceManager(this);
             gameState = gameStates.INGAME;
-<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
-            listObjects.Add(arrayObjectAll[1]);
-            listObjects.Add(arrayObjectAll[0]);
-=======
             //adding Objects and Dynamic Objects to load
             listObjects.Add(arrayObjectAll[0]);
             listObjects.Add(arrayObjectAll[1]);
             listObjects.Add(arrayObjectAll[2]);
->>>>>>> Fix rotation, add bounce func and add comments everywhere
         }
 
         protected override void Update(GameTime gameTime)
@@ -131,15 +122,6 @@ namespace Pong_Arena
             {
                 listObjects[i].Update(gameTime);
             }
-<<<<<<< 9a85af6b17766950feecd95d558906c6f54f3c8c
-            if(arrayObjectAll[0].CollidesWith(arrayObjectAll[1]))
-            {
-                arrayObjectAll[0].Bounce(arrayObjectAll[1]);
-            }
-
-            
-
-=======
             ///check if Object is colliding with Object && enough time has passed to bounce again
             //A bounce interval is neccessary to prevent object from keeping bouncing as Object still collide just little after the bounce
             if(arrayObjectAll[0].CollidesWith(arrayObjectAll[1]) && elapsedBounceTime > bounceInterval)
@@ -148,7 +130,6 @@ namespace Pong_Arena
                 elapsedBounceTime = 0;
             }
             
->>>>>>> Fix rotation, add bounce func and add comments everywhere
             //perform actions based on input
             InputHandler();
         }
