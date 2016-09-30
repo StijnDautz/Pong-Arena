@@ -191,7 +191,7 @@ namespace Pong_Arena
         }
 
         /*
-         * Rotate at certain angle in radials
+         * Rotate a certain angle in radials
          */
         public void Rotate(double angle)
         {

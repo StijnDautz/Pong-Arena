@@ -12,18 +12,15 @@ namespace Pong_Arena
         private GraphicsDeviceManager graphics;
         private gameStates gameState;
         private SpriteBatch spriteBatch;
-        Viewport viewport = new Viewport(new Rectangle(0, 0, 1280, 720));
         private List<DynamicObject> listDynamicObject = new List<DynamicObject>();
         private List<Object> listObjects = new List<Object>();
-        int elapsedBounceTime = 0;
 
-
-        //Initialize
+        //Initialize -- Object dimension need to be even numbers
         private Object[] arrayObjectAll =
         {
-            new Object("ball", new Vector2(100, 100), new Vector2(400, 350),50, 50, 3f),
-            new Object("paddle1", new Vector2(200, 200), new Vector2(200, 200), 40, 120, 0),
-            new Object("ball", new Vector2(0, 100), new Vector2(400, 350),50, 50, 3f),
+            new Object("ball", new Vector2(100, 100), new Vector2(400, 350),38, 40, 3),
+            new Object("paddle1", new Vector2(400, 400), new Vector2(400, 400), 26, 100, 0),
+            new Object("ball", new Vector2(0, 100), new Vector2(400, 350),38, 40, 3f),
             new Object(new Vector2(-100, 0), 720, 100),
             new Object(new Vector2(0, -100), 100, 1280),
             new Object(new Vector2(1280 + 50, 0), 720, 100),
@@ -134,10 +131,6 @@ namespace Pong_Arena
 
         private void GameStateInGame(GameTime gameTime)
         {
-            //setup bouncetime testing
-            int bounceInterval = 200;
-            elapsedBounceTime += gameTime.ElapsedGameTime.Milliseconds;
-
             ///Loop through animList and check if enough time has passed to update to the next frame
             for (int i = 0; i < listDynamicObject.Count; i++)
             {
@@ -147,13 +140,7 @@ namespace Pong_Arena
             {
                 listObjects[i].Update(gameTime);
             }
-            ///check if Object is colliding with Object && enough time has passed to bounce again
-            //A bounce interval is neccessary to prevent object from keeping bouncing as Object still collide just little after the bounce
-            if(arrayObjectAll[0].CollidesWith(arrayObjectAll[1]) && elapsedBounceTime > bounceInterval)
-            {
-                arrayObjectAll[0].Bounce(arrayObjectAll[1]);
-                elapsedBounceTime = 0;
-            }
+
             arrayObjectAll[1].Rotate(Math.PI * 0.008);
 
             //perform actions based on input
