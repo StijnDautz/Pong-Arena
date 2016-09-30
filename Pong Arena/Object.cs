@@ -20,7 +20,8 @@ namespace Pong_Arena
         protected Vector2 direction;
         protected Vector2 origin;
         protected Rectangle sourceRectangle;
-        private List<Object> listBounceObjects = new List<Object>();
+        protected List<Object> listBounceObjects = new List<Object>();
+        protected int elapsedTimeAfterBounce = 0;
         protected double rotation;
         protected float speed;
         protected int height;
@@ -44,6 +45,26 @@ namespace Pong_Arena
                 normal.Normalize();
             }
         };
+
+        /*
+         * Object Constructer -- textureheight and -width
+         */
+        public Object(Vector2 loc, int h, int w)
+        {
+            location = loc;
+            height = h;
+            width = w;
+            direction = Vector2.Zero;
+            sourceRectangle = new Rectangle(1, 0, w, h);
+            origin = new Vector2(width / 2, height / 2);
+            corners = new Vector2[] {
+            new Vector2(loc.X, loc.Y),
+            new Vector2(loc.X + width, loc.Y),
+            new Vector2(loc.X + width, loc.Y + height),
+            new Vector2(loc.X, loc.Y + height),
+            };
+        }
+
 
         /*
          * Object Constructer -- textureheight and -width
@@ -106,8 +127,25 @@ namespace Pong_Arena
             };
         }
 
-        public void Update(GameTime gametime)
+        /*
+         * Called every frame
+         */
+        public virtual void Update(GameTime gameTime)
         {
+            //check for collision and check if this should bounce on this Object, if so Bounce
+            int bounceInterval = 100;
+            elapsedTimeAfterBounce += gameTime.ElapsedGameTime.Milliseconds;
+
+            for (int i = 0; i < listBounceObjects.Count; i++)
+            {
+                if (CollidesWith(listBounceObjects[i]) && elapsedTimeAfterBounce > bounceInterval)
+                {
+                    Bounce(listBounceObjects[i]);
+                    elapsedTimeAfterBounce = 0;
+                }
+            }
+
+            //Move this Object
             Move();
         }
 
@@ -172,7 +210,7 @@ namespace Pong_Arena
                 corners[i] = location + origin + p;
             }
             //set rotation to angle, so the Objects plane corresponds to the texture that's drawn
-            rotation = angle;
+            rotation += angle;
         }
 
         /*
@@ -216,15 +254,16 @@ namespace Pong_Arena
          * Get
          */
         public string getName() { return name; }
-        public Texture2D getTexture() { return texture; }
-        public Vector2 getLocation() { return location; }
-        public Rectangle getSourceRectangle() { return sourceRectangle; }
         public double getRotation() { return rotation; }
+        public Texture2D getTexture() { return texture; }
+        public Rectangle getSourceRectangle() { return sourceRectangle; }
         public Vector2 getOrigin() { return origin; }
+        public Vector2 getLocation() { return location; }
 
         /*
          * Set
          */
         public void setTexture(Texture2D tex) { texture = tex; }
+        public void setBounceObjects(List<Object> bounceObjects) { listBounceObjects = bounceObjects; }
     }
 } 

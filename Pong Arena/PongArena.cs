@@ -12,17 +12,22 @@ namespace Pong_Arena
         private GraphicsDeviceManager graphics;
         private gameStates gameState;
         private SpriteBatch spriteBatch;
+        Viewport viewport = new Viewport(new Rectangle(0, 0, 1280, 720));
         private List<DynamicObject> listDynamicObject = new List<DynamicObject>();
         private List<Object> listObjects = new List<Object>();
         int elapsedBounceTime = 0;
-        double rotation = 0;
+
 
         //Initialize
         private Object[] arrayObjectAll =
         {
             new Object("ball", new Vector2(100, 100), new Vector2(400, 350),50, 50, 3f),
-            new Object("paddle1", new Vector2(200, 180), new Vector2(200, 180), 40, 120, 0),
+            new Object("paddle1", new Vector2(200, 200), new Vector2(200, 200), 40, 120, 0),
             new Object("ball", new Vector2(0, 100), new Vector2(400, 350),50, 50, 3f),
+            new Object(new Vector2(-100, 0), 720, 100),
+            new Object(new Vector2(0, -100), 100, 1280),
+            new Object(new Vector2(1280 + 50, 0), 720, 100),
+            new Object(new Vector2(0, 720), 100, 1280),
         };
         private DynamicObject[] arrayDynamicObjectAll =
         {
@@ -43,10 +48,17 @@ namespace Pong_Arena
             Content.RootDirectory = "Content";
             graphics = new GraphicsDeviceManager(this);
             gameState = gameStates.INGAME;
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
+
             //adding Objects and Dynamic Objects to load
             listObjects.Add(arrayObjectAll[0]);
             listObjects.Add(arrayObjectAll[1]);
             listObjects.Add(arrayObjectAll[2]);
+            listObjects.Add(arrayObjectAll[3]);
+            listObjects.Add(arrayObjectAll[4]);
+            listObjects.Add(arrayObjectAll[5]);
+            listObjects.Add(arrayObjectAll[6]);
         }
 
         protected override void Update(GameTime gameTime)
@@ -64,6 +76,13 @@ namespace Pong_Arena
             }
         }
 
+        protected override void Initialize()
+        {
+            base.Initialize();
+            arrayObjectAll[0].setBounceObjects(new List<Object>() { arrayObjectAll[1], arrayObjectAll[3], arrayObjectAll[4], arrayObjectAll[5], arrayObjectAll[6] });
+            arrayObjectAll[2].setBounceObjects(new List<Object>() { arrayObjectAll[1], arrayObjectAll[3], arrayObjectAll[4], arrayObjectAll[5], arrayObjectAll[6] });
+        }
+
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -76,7 +95,10 @@ namespace Pong_Arena
             ///loop through all Objects
             for (int i = 0; i < arrayObjectAll.Length; i++)
             {
-                arrayObjectAll[i].setTexture(Content.Load<Texture2D>(arrayObjectAll[i].getName()));
+                if (arrayObjectAll[i].getName() != null)
+                {
+                    arrayObjectAll[i].setTexture(Content.Load<Texture2D>(arrayObjectAll[i].getName()));
+                }
             }
         }
 
@@ -94,7 +116,10 @@ namespace Pong_Arena
             for (int i = 0; i < listObjects.Count; i++)
             {
                 Object x = listObjects[i];
-                spriteBatch.Draw(x.getTexture(), x.getLocation(), x.getSourceRectangle(), Color.White, (float)x.getRotation(), x.getOrigin() , 1, SpriteEffects.None, 1);
+                if (x.getName() != null)
+                {
+                    spriteBatch.Draw(x.getTexture(), x.getLocation(), x.getSourceRectangle(), Color.White, (float)x.getRotation(), x.getOrigin(), 1, SpriteEffects.None, 1);
+                }
             }
             spriteBatch.End();
         }
@@ -129,7 +154,8 @@ namespace Pong_Arena
                 arrayObjectAll[0].Bounce(arrayObjectAll[1]);
                 elapsedBounceTime = 0;
             }
-            
+            arrayObjectAll[1].Rotate(Math.PI * 0.008);
+
             //perform actions based on input
             InputHandler();
         }

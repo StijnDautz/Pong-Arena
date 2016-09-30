@@ -35,9 +35,11 @@ namespace Pong_Arena
         /*
          * 
          */
-        public void Update(GameTime gametime)
+        public override void Update(GameTime gameTime)
         {
-            double currentTime = gametime.TotalGameTime.TotalMilliseconds;
+            base.Update(gameTime);
+
+            double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
 
             ///Move object based on speed and direction
             if (direction != null) { location = direction * (float)currentTime * speed; }
